@@ -1,6 +1,6 @@
 Performance Benchmark of Modelica Time-domain Power System Automated Simulations using Python
 =====================================
-Sergio A. Dorado-Rojas (sergio.dorado.rojas@gmail.com), Felipe Galarza-Jiménez (fgalarzaj@unal.edu.co), Prof. Germán A. Ramos Ph.D. (garamosf@unal.edu.co)
+**Authors:** Sergio A. Dorado-Rojas (sergio.dorado.rojas@gmail.com), Manuel Navarro Catalan (manosnavarro@gmail.com), Marcelo de Castro Fernandes (decasm3@rpi.edu), Luigi Vanfretti (luigi.vanfretti@gmail.com)
 
 ## Cite this Work
 
