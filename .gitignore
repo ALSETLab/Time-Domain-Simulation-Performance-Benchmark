@@ -1,0 +1,6 @@
+__pycache__
+WorkingDir
+.ipynb_checkpoints
+FigurePlotting.ipynb
+ResultPlotting.py
+05_Data_PostProcessing_VRAM.ipynb
