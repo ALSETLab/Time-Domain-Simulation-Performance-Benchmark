@@ -58,7 +58,7 @@ def dymola_simulation(model_info, path_dymola, solver, printInfo = True):
         
         # Simulating the model
         if solver == 'dassl':
-            dymola.Execute("Advanced.Define.DAEsolver = true")
+            dymola.ExecuteCommand("Advanced.Define.DAEsolver = true")
             print("DAE setting changed for dassl")
         
         if solver in ["Rkfix2", "Rkfix4", "Euler"]:

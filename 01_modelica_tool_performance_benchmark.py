@@ -58,7 +58,7 @@ if __name__ == "__main__":
                     'library_path': "/OpenIPSL-1.5.0/OpenIPSL/package.mo",
                     'model_path': "/OpenIPSL-1.5.0/OpenIPSL/IEEE14/package.mo", #Path to the package.mo
                     'model_name': "OpenIPSL.IEEE14.IEEE_14_Buses_{}".format(n_exp + 1),
-                    'output_path' : os.path.join(os.getcwd(), "WorkingDir/Dymola/{}".format(solvers[solver][0]))}
+                    'output_path' : os.path.join(os.getcwd(), "WorkingDir/Dymola/{}/{}".format(solvers[solver][0], n_exp + 1))}
 
                     # Current solver
                     solver_name = solvers[solver][0]
@@ -99,7 +99,7 @@ if __name__ == "__main__":
                     'library_path': os.path.join(os.getcwd(), "OpenIPSL-1.5.0/OpenIPSL/package.mo"),
                     'model_path': os.path.join(os.getcwd(),"OpenIPSL-1.5.0/OpenIPSL/IEEE14/package.mo"),
                     'model_name': "OpenIPSL.IEEE14.IEEE_14_Buses_{}".format(n_exp + 1),
-                    'output_path' : os.path.join(os.getcwd(), "WorkingDir/OpenModelica/{}".format(solvers[solver][1]))}
+                    'output_path' : os.path.join(os.getcwd(), "WorkingDir/OpenModelica/{}/".format(solvers[solver][1], n_exp + 1))}
 
                     # Current solver
                     solver_name = solvers[solver][1]
