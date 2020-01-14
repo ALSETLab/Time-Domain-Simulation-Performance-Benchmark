@@ -56,6 +56,8 @@ def dymola_simulation(model_info, path_dymola, solver, printInfo = True):
         if not result:
             print("1: Failed to change working directory")
         
+        dymola.ExecuteCommand("Advanced.TranslationInCommandLog = true")
+
         # Simulating the model
         if solver == 'dassl':
             dymola.ExecuteCommand("Advanced.Define.DAEsolver = true")
