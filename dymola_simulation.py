@@ -62,6 +62,7 @@ def dymola_simulation(model_info, path_dymola, solver, printInfo = True):
             print("DAE setting changed for dassl")
         
         if solver in ["Rkfix2", "Rkfix4", "Euler"]:
+            dymola.ExecuteCommand("Evaluate = true")
             print("Running simulation...")
             result = dymola.simulateModel(model_name, method = solver, stopTime=120, numberOfIntervals=240000, tolerance=1e-06, resultFile = model_name + "_{}".format(solver))
         else:

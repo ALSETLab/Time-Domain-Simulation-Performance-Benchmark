@@ -24,7 +24,7 @@ if __name__ == "__main__":
     metrics_template = {"execution_time" : 0,
            "cpu_use" : [],
            "virtual_memory" : [],
-           "temperature": {"Physical id 0": [],
+           "temperature": {"Package id 0": [],
                             "Core 0" : [],
                           "Core 1" : [],
                           "Core 2" : [],
@@ -32,7 +32,7 @@ if __name__ == "__main__":
                           "Core 4": [],
                           "Core 5": []}}
     # Path to Dymola              
-    path_dymola = "/opt/dymola-2019-x86_64/bin64/dymola.sh" # Path to Dymola in BabyGrid
+    path_dymola = "/opt/dymola-2020x-x86_64/bin64/dymola.sh" # Path to Dymola in BabyGrid
     
     for n_exp, experiment in enumerate(experiments):       
         
