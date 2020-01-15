@@ -37,7 +37,7 @@ def plot_sim_results(solver, experiment, fig_name):
 		solver_dym = 'dassl'
 
 	# Directory of Dymola results
-	simD_dir = os.path.join(current_wd, "WorkingDir/Dymola/{s}/OpenIPSL.IEEE14.IEEE_14_Buses_{e}_{s}.mat".format(s = solver_dym, e = exp))
+	simD_dir = os.path.join(current_wd, "WorkingDir/Dymola/{s}/{e}/OpenIPSL.IEEE14.IEEE_14_Buses_{e}_{s}.mat".format(s = solver_dym, e = exp))
 	# Directory of OpenModelica results
 	simOM_dir = os.path.join(current_wd, "WorkingDir/OpenModelica/{s}/OpenIPSL.IEEE14.IEEE_14_Buses_{e}_res.mat".format(s = solver, e = exp))
 

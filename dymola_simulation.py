@@ -56,13 +56,19 @@ def dymola_simulation(model_info, path_dymola, solver, printInfo = True):
         if not result:
             print("1: Failed to change working directory")
         
+        dymola.ExecuteCommand("Advanced.TranslationInCommandLog = true")
+
         # Simulating the model
         if solver == 'dassl':
             dymola.ExecuteCommand("Advanced.Define.DAEsolver = true")
             print("DAE setting changed for dassl")
         
         if solver in ["Rkfix2", "Rkfix4", "Euler"]:
+<<<<<<< HEAD
             dymola.ExecuteCommand("Evaluate = true")
+=======
+        	dymola.ExecuteCommand("Evaluate = true")
+>>>>>>> 0f627119bc33c9a55a80b508a745b9241adaf444
             print("Running simulation...")
             result = dymola.simulateModel(model_name, method = solver, stopTime=120, numberOfIntervals=240000, tolerance=1e-06, resultFile = model_name + "_{}".format(solver))
         else:
