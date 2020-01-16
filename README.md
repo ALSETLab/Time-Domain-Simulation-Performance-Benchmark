@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/221929051.svg)](https://zenodo.org/badge/latestdoi/221929051)
+
 Performance Benchmark of Modelica Time-domain Power System Automated Simulations using Python
 =====================================
 **Authors:** Sergio A. Dorado-Rojas (sergio.dorado.rojas@gmail.com), Manuel Navarro Catalan (manosnavarro@gmail.com), Marcelo de Castro Fernandes (decasm3@rpi.edu), Luigi Vanfretti (luigi.vanfretti@gmail.com)
