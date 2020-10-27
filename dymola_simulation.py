@@ -6,7 +6,7 @@ from dymola.dymola_exception import DymolaException
 
 def dymola_simulation(model_info, path_dymola, solver, printInfo = True):
     '''
-    
+
     '''
     # Retrieving model information
     root_path = model_info['root_path']
@@ -14,65 +14,61 @@ def dymola_simulation(model_info, path_dymola, solver, printInfo = True):
     model_path = model_info['model_path']
     model_name = model_info['model_name']
     output_path = model_info['output_path']
-    
-    dymola = None   
-    
+
+    dymola = None
+
     try:
         if printInfo:
             print("Creating and starting Dymola instance")
-          
+
         # Creating dymola instance
         dymola = DymolaInterface(dymolapath = path_dymola)
-        
+
         if printInfo:
             print(f"Using Dymola port:" + str(dymola._portnumber))
             print(f"Changing working directory to: {output_path}")
-        
+
         try:
             if not os.path.exists(output_path):
                 os.makedirs(output_path)
                 print("Working directory created")
         except OSError as ex:
             print("1: Failed to create folder for working directory")
-        
-        # CHANGING THE PATH TO OPENING THE LIBRARY AND THE MODEL        
+
+        # CHANGING THE PATH TO OPENING THE LIBRARY AND THE MODEL
         result = dymola.cd(root_path)
         if not result:
             print("1: Failed to change working directory")
-        
+
         # Opening OpenIPSL library
         dymola.openModel(library_path)
         if result and printInfo:
             print("Library opened")
-        
+
         # Opening model
         dymola.openModel(model_path)
         if result and printInfo:
             print("Model opened")
-            
+
         # CHANGING THE PATH FOR THE WORKING DIRECTORY
         # Note that the model is already opened
         result = dymola.cd(output_path)
         if not result:
             print("1: Failed to change working directory")
-        
+
         dymola.ExecuteCommand("Advanced.TranslationInCommandLog = true")
 
         # Simulating the model
         if solver == 'dassl':
             dymola.ExecuteCommand("Advanced.Define.DAEsolver = true")
             print("DAE setting changed for dassl")
-        
+
         if solver in ["Rkfix2", "Rkfix4", "Euler"]:
-<<<<<<< HEAD
             dymola.ExecuteCommand("Evaluate = true")
-=======
-        	dymola.ExecuteCommand("Evaluate = true")
->>>>>>> 0f627119bc33c9a55a80b508a745b9241adaf444
             print("Running simulation...")
             result = dymola.simulateModel(model_name, method = solver, stopTime=120, numberOfIntervals=240000, tolerance=1e-06, resultFile = model_name + "_{}".format(solver))
         else:
-            # Settings for dassl
+            # Running simulation for dassl
             print("Running simulation...")
             result = dymola.simulateModel(model_name, method = solver, stopTime=120, numberOfIntervals=5000, tolerance=1e-06, resultFile = model_name + "_{}".format(solver))
 
@@ -93,5 +89,4 @@ def dymola_simulation(model_info, path_dymola, solver, printInfo = True):
     finally:
         if dymola is not None:
             dymola.close()
-            dymola = None   
-    
+            dymola = None
